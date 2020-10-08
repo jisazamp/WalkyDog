@@ -1,0 +1,12 @@
+{
+  "name": "walkydog",
+  "displayName": "walkydog",
+  "expo": {
+    "name": "walkydog",
+    "slug": "walkydog",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
