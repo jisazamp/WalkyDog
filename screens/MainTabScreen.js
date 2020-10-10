@@ -11,6 +11,8 @@ import DetailsScreen from './DetailsScreen';
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
+const DatesStack = createStackNavigator();
+const HelpStack = createStackNavigator();
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -38,7 +40,7 @@ const MainTabScreen = () => (
           tabBarLabel: 'Updates',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-notificacions" color={color} size={26} />
+            <Icon name="ios-notifications" color={color} size={26} />
           ),
         }}
       />
@@ -108,4 +110,44 @@ const DetailsStackScreen = ({navigation}) => (
 )
   }} />
 </DetailsStack.Navigator>
+);
+
+const DatesStackScreen = ({navigation}) => (
+  <DatesStack.Navigator screenOptions={{
+    headerStyle: {
+      backgroundColor: '#009387',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold'
+    }
+  }}>
+  <DatesStack.Screen name="Dates" component={DatesScreen} options={{
+      headerLeft: () => (
+      <Icon.Button name="ios-menu" size={25} 
+      backgroundColor="#009387" onPress={() => navigation.
+      openDrawer()}></Icon.Button>
+)
+  }} />
+</DatesStack.Navigator>
+);
+
+const HelpStackScreen = ({navigation}) => (
+  <HelpStack.Navigator screenOptions={{
+    headerStyle: {
+      backgroundColor: '#009387',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold'
+    }
+  }}>
+  <HelpStack.Screen name="Help" component={HelpScreen} options={{
+      headerLeft: () => (
+      <Icon.Button name="ios-menu" size={25} 
+      backgroundColor="#009387" onPress={() => navigation.
+      openDrawer()}></Icon.Button>
+)
+  }} />
+</HelpStack.Navigator>
 );

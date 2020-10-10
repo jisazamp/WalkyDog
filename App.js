@@ -8,63 +8,15 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-
-// import HomeScreen from './screens/HomeScreen';
-// import DetailsScreen from './screens/DetailsScreen';
-import DatesScreen from './screens/DatesScreen';
-import HelpScreen from './screens/HelpScreen';
 import MainTabScreen from './screens/MainTabScreen'
+import { DrawerContent } from './screens/DrawerContent';
 
-// const HomeStack = createStackNavigator();
-// const DetailsStack = createStackNavigator();
-const DatesStack = createStackNavigator();
-const HelpStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
-
-const DatesStackScreen = ({navigation}) => (
-  <DatesStack.Navigator screenOptions={{
-    headerStyle: {
-      backgroundColor: '#009387',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold'
-    }
-  }}>
-  <DatesStack.Screen name="Dates" component={DatesScreen} options={{
-      headerLeft: () => (
-      <Icon.Button name="ios-menu" size={25} 
-      backgroundColor="#009387" onPress={() => navigation.
-      openDrawer()}></Icon.Button>
-)
-  }} />
-</DatesStack.Navigator>
-);
-
-const HelpStackScreen = ({navigation}) => (
-  <HelpStack.Navigator screenOptions={{
-    headerStyle: {
-      backgroundColor: '#009387',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold'
-    }
-  }}>
-  <HelpStack.Screen name="Help" component={HelpScreen} options={{
-      headerLeft: () => (
-      <Icon.Button name="ios-menu" size={25} 
-      backgroundColor="#009387" onPress={() => navigation.
-      openDrawer()}></Icon.Button>
-)
-  }} />
-</HelpStack.Navigator>
-);
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator drawerContent={props => <DrawerContent {...props}/>}>
         <Drawer.Screen name="Home" component={MainTabScreen} />
         {/* <Drawer.Screen name="Details" component={DetailsStackScreen} />
         <Drawer.Screen name="Dates" component={DatesStackScreen} />
